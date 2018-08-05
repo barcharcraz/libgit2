@@ -284,4 +284,9 @@ libgit2_lib = library('git2', src_git2 + src_os + win_rc + src_vendor,
 	install: true,
 	dependencies: [zlib_dep])
 
+libgit2_dep = declare_dependency(
+	include_directories: i,
+	link_with: libgit2_lib,
+	version: '0.27.3')
+
 install_headers(h_inc_git2)
